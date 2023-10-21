@@ -5,17 +5,15 @@ This Proposal shows the work flow and plans for the 2023 Autumn NYCU NSD term pr
 
 GitHub Link : [https://github.com/leeshengcian/Polygon-Clipping/tree/main]
 
-Polygon clipping is the process of cutting off parts of a polygon that lie outside a given boundary.
-
 Polygon clipping are important operations in algorithm design, especially for computer graphics, computer vision, and computational geometry.
+
+Polygon clipping is the process of cutting off parts of a polygon that lie outside a given boundary.For example, if you have a triangle that extends beyond the edges of a window, polygon clipping is the operation that trims the triangle to fit inside the window.
 
 ## Problem to Solve
 
-For example, if you have a triangle that extends beyond the edges of a window, polygon clipping is the operation that trims the triangle to fit inside the window.
+For Polygon Clipping problem, there are many algorithms are capable of solving this problem, such as ==Sutherland–Hodgman algorithm==, ==Greiner–Hormann clipping algorithm==, ==Vatti clipping algorithm==, ==Weiler–Atherton clipping algorithm==.
 
-For Polygon Clipping problem, there are many algorithms are capable of solving this problem, such as Sutherland–Hodgman algorithm, Greiner–Hormann clipping algorithm, Vatti clipping algorithm, Weiler–Atherton clipping algorithm.
-
-Especially for Sutherland–Hodgman algorithm, which is one of the most widely used algorithms for polygon clipping. However, it has some drawbacks, such as being inefficient and slow for large or complex polygons.This is because it must process every edge of the polygon against every edge of the boundary.Additionally, it can lead to numerical errors and rounding issues from the use of floating-point arithmetic and intersection calculations.
+==Sutherland–Hodgman algorithm==, which is one of the most widely used algorithms for polygon clipping. However, it has some drawbacks, such as being inefficient and slow for large or complex polygons.This is because it must process every edge of the polygon against every edge of the boundary.Additionally, it can lead to numerical errors and rounding issues from the use of floating-point arithmetic and intersection calculations.
 
 possible usage:
 
