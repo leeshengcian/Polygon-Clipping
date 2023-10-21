@@ -66,3 +66,6 @@ to be planned...
 
 - [Sutherland–Hodgman algorithm](https://en.wikipedia.org/wiki/Sutherland%E2%80%93Hodgman_algorithm)
 - [Sutherland–Hodgman algorithm Implementation](https://www.geeksforgeeks.org/polygon-clipping-sutherland-hodgman-algorithm/)
+- [Greiner–Hormann clipping algorithm](https://en.wikipedia.org/wiki/Greiner%E2%80%93Hormann_clipping_algorithm)
+- [Vatti clipping algorithm](https://en.wikipedia.org/wiki/Vatti_clipping_algorithm)
+- [Weiler–Atherton clipping algorithm](https://en.wikipedia.org/wiki/Weiler%E2%80%93Atherton_clipping_algorithm)
