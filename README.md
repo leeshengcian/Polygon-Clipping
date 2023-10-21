@@ -11,9 +11,9 @@ Polygon clipping is the process of cutting off parts of a polygon that lie outsi
 
 ## Problem to Solve
 
-For Polygon Clipping problem, there are many algorithms are capable of solving this problem, such as ==Sutherland–Hodgman algorithm==, ==Greiner–Hormann clipping algorithm==, ==Vatti clipping algorithm==, ==Weiler–Atherton clipping algorithm==.
+For Polygon Clipping problem, there are many algorithms are capable of solving this problem, such as **Sutherland–Hodgman algorithm**, **Greiner–Hormann clipping algorithm**, **Vatti clipping algorithm**, **Weiler–Atherton clipping algorithm**.
 
-==Sutherland–Hodgman algorithm==, which is one of the most widely used algorithms for polygon clipping. However, it has some drawbacks, such as being inefficient and slow for large or complex polygons.This is because it must process every edge of the polygon against every edge of the boundary.Additionally, it can lead to numerical errors and rounding issues from the use of floating-point arithmetic and intersection calculations.
+**Sutherland–Hodgman algorithm**, which is one of the most widely used algorithms for polygon clipping. However, it has some drawbacks, such as being inefficient and slow for large or complex polygons.This is because it must process every edge of the polygon against every edge of the boundary.Additionally, it can lead to numerical errors and rounding issues from the use of floating-point arithmetic and intersection calculations.
 
 possible usage:
 
