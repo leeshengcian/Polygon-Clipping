@@ -21,11 +21,11 @@ In this work, we focus on improving the Sutherland–Hodgman algorithm, make it 
 
 ## System Architecture
 
-planning
+to be planned...
 
 ## API Description
 
-planning
+to be planned...
 
 ## Engineering Infrastructure
 
