@@ -3,7 +3,7 @@ This Proposal shows the work flow and plans for the 2023 Autumn NYCU NSD term pr
 
 ## Basic Information
 
-GitHub Link : [https://github.com/leeshengcian/Polygon-Clipping/tree/main]
+GitHub Link : [repo](https://github.com/leeshengcian/Polygon-Clipping)
 
 Polygon clipping are important operations in algorithm design, especially for computer graphics, computer vision, and computational geometry.
 
