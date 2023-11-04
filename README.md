@@ -21,7 +21,7 @@ In this work, we focus on improving the Sutherland–Hodgman algorithm, make it 
 
 ## System Architecture
 
-to be planned...
+![image](https://github.com/leeshengcian/Polygon-Clipping/blob/main/image/term-project-work-flow.png)
 
 ## API Description
 
