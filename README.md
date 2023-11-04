@@ -27,10 +27,10 @@ In this work, we focus on improving the Sutherland–Hodgman algorithm, make it 
 
 1. Function in c++ file:
     - `Sutherland–Hodgman`: Implement original Sutherland–Hodgman algorithm on polygon clipping
-    - `improved-Sutherland–Hodgman`: Implement redesined Sutherland–Hodgman algorithm
+    - `improved-Sutherland–Hodgman`: Implement redesigned Sutherland–Hodgman algorithm
 2. Function in python file:
     - `Test-two-algo`: Test if two algorithms generate same result and write result in polygon format into Result.txt
-    - `Visualize`: Write clipped result into Result.png
+    - `Visualize`: Visualize clipped result and write into Result.png
     - `Benchmark`: Measure each algorithms' performance and write time consumption into performance.txt
 3. Use Pybind11 to wrap C++ functions for Python
 
