@@ -1,6 +1,5 @@
 // algorithm for polygon clipping
 #include<iostream>
-using namespace std;
 
 const int MAX_POINTS = 20;
 
@@ -121,7 +120,7 @@ void suthHodgClip(int poly_points[][2], int poly_size,
 
 	// Printing vertices of clipped polygon
 	for (int i=0; i < poly_size; i++)
-		cout << '(' << poly_points[i][0] <<
+		std::cout << '(' << poly_points[i][0] <<
 				", " << poly_points[i][1] << ") ";
 }
 
