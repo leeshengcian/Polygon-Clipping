@@ -123,11 +123,6 @@ int suthHodgClip(int poly_points[][2], int poly_size,
 			clipper_points[k][1]);
 	}
 
-	// // Printing vertices of clipped polygon
-	// for (int i=0; i < poly_size; i++)
-	// 	std::cout << '(' << poly_points[i][0] <<
-	// 			", " << poly_points[i][1] << ") ";
-
 	return poly_size;
 }
 
@@ -177,26 +172,5 @@ py::array_t<int> clipPolygons(py::array_t<int> poly_points, py::array_t<int> cli
 
 PYBIND11_MODULE(clipper, m){
     m.doc() = "Polygon Clipping using Sutherland–Hodgman algorithm";
-    //m.def("suthHodgClip", &suthHodgClip, "Clip polygons using the Sutherland–Hodgman algorithm");
 	m.def("clipPolygons", &clipPolygons, "Clip polygons using the Sutherland–Hodgman algorithm");
 }
-//Driver code
-// int main()
-// {
-// 	// Defining polygon vertices in clockwise order
-// 	int poly_size = 3;
-// 	int poly_points[20][2] = {{100,150}, {200,250},
-// 							{300,200}};
-
-// 	// Defining clipper polygon vertices in clockwise order
-// 	// 1st Example with square clipper
-// 	int clipper_size = 4;
-// 	int clipper_points[][2] = {{150,150}, {150,200},
-// 							{200,200}, {200,150} };
-
-// 	//Calling the clipping function
-// 	suthHodgClip(poly_points, poly_size, clipper_points,
-// 				clipper_size);
-
-// 	return 0;
-// }
