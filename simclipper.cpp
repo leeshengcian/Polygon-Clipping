@@ -176,6 +176,6 @@ py::array_t<float> clipPolygons(py::array_t<float> poly_points, py::array_t<floa
 }
 
 PYBIND11_MODULE(simclipper, m){
-    m.doc() = "Polygon Clipping using Sutherland–Hodgman algorithm(with integer data type)";
-	m.def("simclipPolygons", &clipPolygons, "Clip polygons using the Sutherland–Hodgman algorithm(with integer data type)");
+    m.doc() = "Polygon Clipping using Sutherland–Hodgman algorithm(with float data type)";
+	m.def("simclipPolygons", &clipPolygons, "Clip polygons using the Sutherland–Hodgman algorithm(with float data type)");
 }
