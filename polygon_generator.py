@@ -29,8 +29,8 @@ def save_polygons_to_txt(polygons, filename='polygons.txt'):
             file.write('\n')  # Add a blank line between polygons
 
 # Generate two simple polygons, each with 10 vertices
-polygon1 = generate_simple_polygon_array(6)
-polygon2 = generate_simple_polygon_array(100000)
+polygon1 = generate_simple_polygon_array(3, 20)
+polygon2 = generate_simple_polygon_array(5000, 15)
 
 # Save the polygons to a text file
 save_polygons_to_txt([polygon1, polygon2], 'polygons.txt')

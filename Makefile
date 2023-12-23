@@ -1,20 +1,23 @@
 CXX = g++
 CXXFLAGS = -O3 -Wall --shared -std=c++17 -fPIC `python3 -m pybind11 --includes` `python3-config --includes --ldflags` -undefined dynamic_lookup
-TARGET = clipper.so
+TARGET = clipper.so 
+TARGET_sim = simclipper.so
 DATA = polygons.txt
 TEST_FILE = test
 
 .PHONY: all generate_data run_python clean
 
-all: $(TARGET) generate_data
+all: $(TARGET) $(TARGET_sim) generate_data
 $(TARGET): clipper.cpp
+	$(CXX) -o $@ $(CXXFLAGS) $<
+$(TARGET_sim): simclipper.cpp
 	$(CXX) -o $@ $(CXXFLAGS) $<
 
 generate_data: $(DATA) run_python
 $(DATA): 
 	python3 polygon_generator.py
 
-run_python: clipper.so test_poly.py
+run_python: clipper.so simclipper.so test_poly.py
 	python3 test_poly.py
 
 clean:

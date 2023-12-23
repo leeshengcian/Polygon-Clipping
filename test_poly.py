@@ -3,6 +3,7 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 import clipper
+import simclipper
 import time
 
 def read_polygons_from_txt(filename='polygons.txt'):
@@ -36,28 +37,29 @@ polygons = read_polygons_from_txt()
 # Assign the polygons to poly_points and clipper_points
 poly_points, clipper_points = polygons
 
-plt.figure(figsize=(8, 8))
+# Test simple data
+# poly_points = np.array([[200,200],[175,200],[150,150],[150,200],[125,200],[175,250],[200,220],[250,250],[300,200],[250,225],[250,175],[200,150]])
+# clipper_points = np.array([[100,300],[300,300],[200,100]])
+
+plt.figure(figsize=(10, 5))
+plt.subplot(1, 2, 1)
 # Plotting the original polygon edges
 original_x = poly_points[:, 0]
 original_y = poly_points[:, 1]
 plt.fill(original_x, original_y, color='blue', alpha=0.5, label='Original Polygon')
 
-# Test simple data
-# poly_points = np.array([[200,200],[175,200],[150,150],[150,200],[125,200],[175,250],[200,220],[250,250],[300,200],[250,225],[250,175],[200,150]])
-# clipper_points = np.array([[100,300],[300,300],[200,100]])
-
 # Set a Timer to record computation time
 start_time = time.time()
 
-# Perfrom Polygon Clipping
+# Perfrom Complex Polygon Clipping
 clipped = clipper.clipPolygons(poly_points, clipper_points)
 
 end_time = time.time()
 elapsed_time = end_time - start_time
-print(f"Elapsed time: {elapsed_time:.4f} seconds")
 
-# for i in range(clipped.shape[0]):
-#     print("(", clipped[i][0], ",", clipped[i][1], ")")
+# print(poly_points)
+print("Complex Clipped Polygon is " , clipped.shape[0] , " edges Polygon")
+print(f"Elapsed time for complex clipping is: {elapsed_time:.4f} seconds")
 
 # Plotting the clipper polygon edges
 clipper_x = clipper_points[:, 0]
@@ -72,11 +74,57 @@ plt.fill(clipped_x, clipped_y, color='red', alpha=0.5, label='Clipped Polygon')
 # Set labels and title
 plt.xlabel('X-axis')
 plt.ylabel('Y-axis')
-plt.title('Polygon Clipping Visualization')
+plt.title('Complex Polygon Clipping Visualization')
+
+# Show legend
+plt.legend()
+plt.grid(True)
+# plt.show()
+
+# Read two polygons from the 'polygons.txt' file
+polygons = read_polygons_from_txt()
+
+# Assign the polygons to poly_points and clipper_points
+poly_points, clipper_points = polygons
+
+plt.subplot(1, 2, 2)
+# Plotting the original polygon edges
+original_x = poly_points[:, 0]
+original_y = poly_points[:, 1]
+plt.fill(original_x, original_y, color='blue', alpha=0.5, label='Original Polygon')
+
+# Set a Timer to record computation time
+start_time = time.time()
+
+# Perfrom Simple Polygon Clipping
+sim_clipped = simclipper.simclipPolygons(poly_points, clipper_points)
+
+end_time = time.time()
+elapsed_time = end_time - start_time
+
+# print(poly_points)
+print("Simple Clipped Polygon is " , sim_clipped.shape[0] , " edges Polygon")
+print(f"Elapsed time for simple clipping is: {elapsed_time:.4f} seconds")
+
+# Plotting the clipper polygon edges
+clipper_x = clipper_points[:, 0]
+clipper_y = clipper_points[:, 1]
+plt.fill(clipper_x, clipper_y, color='yellow', alpha=0.5, label='Clipper Polygon')
+
+# Highlight the clipped polygon
+sim_clipped_x = sim_clipped[:, 0]
+sim_clipped_y = sim_clipped[:, 1]
+plt.fill(sim_clipped_x, sim_clipped_y, color='red', alpha=0.5, label='Clipped Polygon')
+
+# Set labels and title
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.title('Simple Polygon Clipping Visualization')
 
 # Show legend
 plt.legend()
 
 # Show the plot
 plt.grid(True)
+plt.tight_layout()
 plt.show()
