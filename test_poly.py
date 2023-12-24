@@ -58,8 +58,8 @@ end_time = time.time()
 elapsed_time = end_time - start_time
 
 # print(poly_points)
-print("Complex Clipped Polygon is " , clipped.shape[0] , " edges Polygon")
-print(f"Elapsed time for complex clipping is: {elapsed_time:.4f} seconds")
+# print("Complex Clipped Polygon is " , clipped.shape[0] , " edges Polygon")
+# print(f"Elapsed time for complex clipping is: {elapsed_time:.8f} seconds")
 
 # Plotting the clipper polygon edges
 clipper_x = clipper_points[:, 0]
@@ -72,9 +72,11 @@ clipped_y = clipped[:, 1]
 plt.fill(clipped_x, clipped_y, color='red', alpha=0.5, label='Clipped Polygon')
 
 # Set labels and title
-plt.xlabel('X-axis')
-plt.ylabel('Y-axis')
+# plt.xlabel('X-axis')
+# plt.ylabel('Y-axis')
 plt.title('Complex Polygon Clipping Visualization')
+plt.annotate(f'Number of Edges: {clipped.shape[0]}', xy=(0.5, -0.2), xycoords='axes fraction', ha='center')
+plt.annotate(f'Runtime: {elapsed_time:.8f} seconds', xy=(0.5, -0.15), xycoords='axes fraction', ha='center')
 
 # Show legend
 plt.legend()
@@ -103,8 +105,8 @@ end_time = time.time()
 elapsed_time = end_time - start_time
 
 # print(poly_points)
-print("Simple Clipped Polygon is " , sim_clipped.shape[0] , " edges Polygon")
-print(f"Elapsed time for simple clipping is: {elapsed_time:.4f} seconds")
+# print("Simple Clipped Polygon is " , sim_clipped.shape[0] , " edges Polygon")
+# print(f"Elapsed time for simple clipping is: {elapsed_time:.8f} seconds")
 
 # Plotting the clipper polygon edges
 clipper_x = clipper_points[:, 0]
@@ -117,10 +119,13 @@ sim_clipped_y = sim_clipped[:, 1]
 plt.fill(sim_clipped_x, sim_clipped_y, color='red', alpha=0.5, label='Clipped Polygon')
 
 # Set labels and title
-plt.xlabel('X-axis')
-plt.ylabel('Y-axis')
+# plt.xlabel('X-axis')
+# plt.ylabel('Y-axis')
 plt.title('Simple Polygon Clipping Visualization')
+plt.annotate(f'Number of Edges: {sim_clipped.shape[0]}', xy=(0.5, -0.2), xycoords='axes fraction', ha='center')
+plt.annotate(f'Runtime: {elapsed_time:.8f} seconds', xy=(0.5, -0.15), xycoords='axes fraction', ha='center')
 
+plt.suptitle(f'When Clipper Polygons has {clipper_points.shape[0]} edges', fontsize=16)
 # Show legend
 plt.legend()
 
