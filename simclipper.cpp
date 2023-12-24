@@ -6,7 +6,7 @@
 #include <utility>
 #include <numeric>
 
-const int MAX_POINTS = 100000;
+const int MAX_POINTS = 300000;
 
 // Returns x-value of point of intersection of two
 // lines
